@@ -1,0 +1,366 @@
+Interactive Orbit Portfolio — Project Specification
+Project Overview
+
+Create a cinematic, futuristic single-page portfolio landing experience inspired by atomic/orbital motion visuals.
+
+The center of the screen contains a glowing non-clickable core sphere representing the creator identity. Orbiting around it are 3 animated glowing spheres:
+
+FullStack
+Game Development
+Multimedia Production
+
+Each orbiting sphere is clickable and redirects to its own portfolio section/page.
+
+The visual style should feel:
+
+Minimal but premium
+Sci-fi / holographic
+Smooth and atmospheric
+Elegant motion design
+Soft glow, blur, bloom, and fading transitions
+Responsive on desktop and mobile
+
+The goal is to make the homepage itself feel like an interactive animated identity rather than a traditional portfolio.
+
+Core Experience
+Main Scene
+
+The page opens with:
+
+Dark deep-space style background
+Subtle animated particles/stars
+A glowing center sphere
+3 orbiting animated spheres
+Orbit trails rendered dynamically
+Floating ambient light effects
+
+The orbiting spheres move continuously around the center in smooth elliptical paths.
+
+The center sphere is NOT clickable.
+
+Each orbiting sphere:
+
+Has a title below it
+Has optional subtitle/description
+Is clickable
+Has hover effects
+Emits glow/light
+Slightly scales on hover
+Slows orbit animation slightly on hover
+Navigation Structure
+Center Sphere
+
+Represents:
+
+Personal identity / brand
+
+Possible content:
+
+Name/logo
+“Creative Technologist”
+Animated pulse glow
+
+Not clickable.
+
+Orbiting Spheres
+1. FullStack
+
+Redirects to:
+
+/fullstack
+
+Examples of showcased content:
+
+Web apps
+Backend systems
+APIs
+SaaS
+Cloud architecture
+2. Game Development
+
+Redirects to:
+
+/gamedev
+
+Examples:
+
+Unity projects
+VR projects
+Multiplayer systems
+Experimental mechanics
+3. Multimedia Production
+
+Redirects to:
+
+/multimedia
+
+Examples:
+
+Music production
+Video editing
+3D reconstruction
+Viral content analysis
+Cinematic edits
+UI/UX Requirements
+Visual Effects
+Spheres
+
+Each sphere should include:
+
+Gradient material
+Inner glow
+Outer bloom
+Fresnel/rim lighting effect
+Animated shimmer
+Floating movement offset
+Orbit Lines
+
+Orbit paths should:
+
+Be softly glowing
+Animated with moving particles/light streaks
+Slightly transparent
+Layer correctly in depth
+Hover Interaction
+
+When hovering a sphere:
+
+Sphere enlarges slightly
+Glow intensifies
+Orbit trail brightens
+Related text fades in stronger
+Cursor changes to pointer
+Click Interaction
+
+On click:
+
+Smooth transition
+Slight zoom into selected sphere
+Fade background
+Route transition animation
+Text Styling
+Main Title
+
+Large centered text above or near center:
+
+Creative Technology Portfolio
+
+Style:
+
+Thin futuristic font
+Glow/fade animation
+Slight blur entrance
+Letter spacing
+Subtitle
+
+Example:
+
+FullStack • Game Development • Multimedia Production
+
+Animated fade cycling recommended.
+
+Labels Under Spheres
+
+Each sphere should contain:
+
+Category title
+Small description
+Soft animated opacity
+
+Example:
+
+FullStack
+Modern web systems & backend architecture
+Animation Requirements
+Orbital Motion
+
+Use:
+
+Independent orbit speeds
+Slight speed variation
+Smooth easing
+Infinite looping
+
+Motion must feel:
+
+Fluid
+Physics-inspired
+Calm
+Premium
+
+Avoid:
+
+Mechanical movement
+Sudden speed changes
+Ambient Motion
+
+Add:
+
+Floating particles
+Subtle camera drift/parallax
+Pulsing glows
+Background gradients shifting slowly
+Responsive Behavior
+Desktop
+Full orbital animation
+Rich glow effects
+Mouse interaction
+Parallax enabled
+Mobile
+Simplified orbit calculations
+Reduced particle count
+Touch interactions
+Lower GPU usage
+
+Potential mobile optimization:
+
+Convert some live effects to shaders or CSS transforms
+Reduce blur radius
+Recommended Stack
+Frontend Framework
+Recommended:
+React
+Next.js
+
+Why:
+
+Smooth routing
+Easy animation architecture
+Good SEO support
+Scalable portfolio structure
+Animation / Graphics
+Best Option
+Three.js + React Three Fiber
+
+Use for:
+
+3D spheres
+Orbit rendering
+Glow effects
+Lighting
+Depth/parallax
+
+Libraries:
+
+three
+@react-three/fiber
+@react-three/drei
+Motion System
+
+Use:
+
+framer-motion
+
+For:
+
+Text fades
+Hover transitions
+Page transitions
+UI animations
+Styling
+Recommended
+TailwindCSS
+
+Why:
+
+Fast iteration
+Easy responsive design
+Excellent for glow/transparency utilities
+Optional Visual Enhancement
+Postprocessing
+
+Use:
+
+@react-three/postprocessing
+
+Effects:
+
+Bloom
+Noise
+Vignette
+Depth of field
+Routing
+Use
+Next.js App Router
+
+Pages:
+
+/
+ /fullstack
+ /gamedev
+ /multimedia
+Performance Requirements
+Target
+60fps desktop
+30–60fps mobile
+Optimization Strategies
+GPU accelerated transforms
+Limit particle count
+Memoized animations
+Instanced meshes for particles
+Lazy-load portfolio pages
+Suggested File Structure
+src/
+ ├── app/
+ │    ├── page.tsx
+ │    ├── fullstack/
+ │    ├── gamedev/
+ │    └── multimedia/
+ │
+ ├── components/
+ │    ├── OrbitScene.tsx
+ │    ├── SphereNode.tsx
+ │    ├── OrbitRing.tsx
+ │    ├── BackgroundParticles.tsx
+ │    └── FloatingText.tsx
+ │
+ ├── shaders/
+ │    ├── glowShader.ts
+ │    └── orbitShader.ts
+ │
+ ├── styles/
+ │    └── globals.css
+Technical Expectations for the Agent
+
+The implementation agent should:
+
+Build reusable orbit node components
+Use delta-time animation updates
+Separate rendering from UI logic
+Keep animations smooth under load
+Support future addition of more orbiting nodes
+Maintain accessibility where possible
+Ensure graceful degradation on weaker GPUs
+Design References / Mood
+
+The final experience should resemble:
+
+Futuristic operating systems
+Sci-fi HUD interfaces
+Minimal cinematic tech intros
+High-end AI/creative studio websites
+
+Keywords:
+
+cinematic
+orbital
+ethereal
+neon
+holographic
+futuristic
+minimal
+premium
+immersive
+Deliverable Expectations
+
+The final implementation should include:
+
+Fully responsive landing page
+Animated orbital system
+Clickable portfolio categories
+Smooth transitions
+Optimized rendering
+Modular component architecture
+Easily editable portfolio data/content system
+
+NOTE: READ THE SKILLS YOU HAVE ON .agents/ so if anything in this Instructions contradicts those files, those files are the source of truth.
