@@ -1,6 +1,6 @@
 "use client";
 
-import { Text } from "@react-three/drei";
+import { Billboard, Text } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRouter } from "next/navigation";
 import { memo, useMemo, useRef } from "react";
@@ -94,27 +94,11 @@ export const PortfolioPlanet = memo(function PortfolioPlanet({ node, segments }:
           blending={AdditiveBlending}
         />
       </mesh>
-      <Text
-        position={[0, -node.size - 0.34, 0]}
-        fontSize={0.14}
-        anchorX="center"
-        anchorY="middle"
-        color="#f6fdff"
-        maxWidth={1.55}
-      >
-        {node.title}
-      </Text>
-      <Text
-        position={[0, -node.size - 0.58, 0]}
-        fontSize={0.066}
-        anchorX="center"
-        anchorY="middle"
-        color="#b8d7de"
-        maxWidth={1.65}
-        textAlign="center"
-      >
-        {node.description}
-      </Text>
+      <Billboard position={[0, -node.size - 0.36, 0]} follow lockX={false} lockY={false} lockZ={false}>
+        <Text fontSize={0.14} anchorX="center" anchorY="middle" color="#f6fdff" maxWidth={1.6}>
+          {node.title}
+        </Text>
+      </Billboard>
     </group>
   );
 });

@@ -23,6 +23,8 @@ Styling:
 State:
 - Zustand only when global shared state is required
 
+Services:
+- Resend
 ---
 
 # Forbidden Technologies

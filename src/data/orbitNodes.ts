@@ -16,7 +16,7 @@ export type OrbitNode = {
 export const orbitNodes: OrbitNode[] = [
   {
     id: "fullstack",
-    title: "FullStack",
+    title: "FullStack Development",
     description: "Modern web systems & backend architecture",
     href: "/fullstack",
     color: "#63f2ff",
@@ -45,7 +45,7 @@ export const orbitNodes: OrbitNode[] = [
   {
     id: "multimedia",
     title: "Multimedia Production",
-    description: "Sound, motion, 3D reconstruction & cinematic edits",
+    description: "Sound, motion, 3D Modeling & cinematic edits",
     href: "/multimedia",
     color: "#ff6ba8",
     accent: "#ffc1da",
@@ -62,19 +62,23 @@ export const sectionDetails = {
   fullstack: {
     eyebrow: "Systems",
     title: "FullStack",
-    summary: "Interfaces, APIs, cloud foundations, and production web platforms designed for speed and longevity.",
+    summary: "I build interfaces, APIs, cloud foundations, and production web platforms designed for speed and longevity.",
     items: ["SaaS dashboards", "Backend services", "API architecture", "Cloud deployment"],
+    canUrlRedirect: true,
   },
   gamedev: {
     eyebrow: "Interaction",
     title: "Game Development",
-    summary: "Real-time experiences, prototypes, Unity systems, VR scenes, and mechanics with a strong technical spine.",
-    items: ["Unity projects", "VR interactions", "Multiplayer systems", "Experimental mechanics"],
+    summary: "Real-time experiences, Unity prototypes, VR scenes, and mechanics with a strong technical spine.",
+    items: ["Unity and Roblox projects", "VR interactions", "Multiplayer systems", "Experimental mechanics"],
+    canUrlRedirect: true,
   },
   multimedia: {
     eyebrow: "Production",
     title: "Multimedia Production",
-    summary: "Cinematic edits, sound design, video systems, 3D reconstruction, and content analysis workflows.",
-    items: ["Music production", "Video editing", "3D reconstruction", "Cinematic content"],
+    summary: "Cinematic Animations, sound design, 3D modeling, texturing, shading and 2D design heavily game oriented.",
+    items: ["Cinematic Animations", "Sound Design", "3D Modeling", "Texturing & Shading"],
+    canUrlRedirect: false,
+
   },
 } as const;

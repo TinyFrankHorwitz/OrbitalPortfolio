@@ -1,13 +1,16 @@
 import Link from "next/link";
 import type { sectionDetails } from "@/data/orbitNodes";
+import type { ProjectCard } from "@/data/projectCarousels";
+import { ProjectCarousel } from "@/components/portfolio/ProjectCarousel";
 
 type SectionKey = keyof typeof sectionDetails;
 
 type SectionPageProps = {
   section: (typeof sectionDetails)[SectionKey];
+  projects: readonly ProjectCard[];
 };
 
-export function SectionPage({ section }: SectionPageProps) {
+export function SectionPage({ section, projects }: SectionPageProps) {
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#05060b] px-5 py-6 text-cyan-50 sm:px-8 lg:px-12">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_24%_22%,rgba(99,242,255,0.16),transparent_28rem),radial-gradient(circle_at_75%_40%,rgba(255,107,168,0.11),transparent_26rem)]" />
@@ -30,6 +33,8 @@ export function SectionPage({ section }: SectionPageProps) {
             </div>
           ))}
         </div>
+
+        <ProjectCarousel projects={projects} bottomMessage={section.canUrlRedirect} />
       </section>
     </main>
   );
